@@ -1,0 +1,11 @@
+{
+    "name": "envy/reminder",
+    "description": "Reminder project",
+    "authors": [
+        {
+            "name": "Dmytro",
+            "email": "aryox666@mail.ru"
+        }
+    ],
+    "require": {}
+}
