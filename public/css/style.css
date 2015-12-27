@@ -1,0 +1,188 @@
+/*
+ * Specific styles of signin component
+ */
+/*
+ * General styles
+ */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.main {
+    min-height: 100%;
+    height: 100%;
+    margin: 150px auto -155px; /* the bottom margin is the negative value of the footer's height */
+}
+
+.card-container.card {
+    max-width: 350px;
+    padding: 40px 40px;
+}
+
+/*
+ * Card component
+ */
+.card {
+    background-color: #F7F7F7;
+    /* just in case there no content*/
+    padding: 20px 25px 30px;
+    margin: 25px auto 25px;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.card .title {
+    margin-bottom: 20px;
+    font-size: 22px;
+    text-align: center;
+}
+
+.profile-img-card {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+/*
+ * Form styles
+ */
+.profile-name-card {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0 0;
+    min-height: 1em;
+}
+
+.reauth-email {
+    display: block;
+    color: #404040;
+    line-height: 2;
+    margin-bottom: 10px;
+    font-size: 14px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form-control:focus, {
+    border-color: rgb(104, 145, 162);
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+}
+
+.forgot-password {
+    color: rgb(104, 145, 162);
+}
+
+.forgot-password:hover,
+.forgot-password:active,
+.forgot-password:focus{
+    color: rgb(12, 97, 33);
+}
+
+footer {
+    height: 155px;
+}
+
+footer .content {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+table.calendar {
+    border: 1px solid #999;
+    border-collapse: collapse;
+    font-family: Georgia, Times, serif;
+}
+.calendar th {
+    border: 1px solid #999;
+    font-size: 70%;
+    text-transform: uppercase;
+}
+.calendar td {
+    border: 1px solid #999;
+    height: 5em;
+    width:5em;
+    padding: 5px;
+    vertical-align: top;
+}
+.calendar caption {
+    font-size: 300%;
+    font-style: italic;
+}
+.day {
+    text-align: right;
+}
+.notes {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 80%;
+    text-align: right;
+    padding-left: 20px;
+}
+.birthday {
+    background-color: #ECE;
+}
+.weekend {
+    background-color: #F3F3F3;
+}
+
+.new-task {
+    margin-top: 120px;
+}
+
+.tasks {
+    min-height: 400px;
+}
+
+.slick-prev:before, .slick-next:before {
+    font-family: FontAwesome;
+    font-size: 40px;
+    line-height: 1;
+    color: red;
+    opacity: 0.75;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-prev:before {
+    content: "\f053";
+}
+[dir="rtl"] .slick-prev:before {
+    content: "\f054";
+}
+
+[dir="rtl"] .slick-next {
+    left: -10px; top: 70px; right: auto;
+}
+.slick-next:before {
+    content: "\f054";
+}
+[dir="rtl"] .slick-next:before {
+    content: "\f054";
+}
+
+.arrow-wrapper a {
+    text-decoration: none;
+}
+
+.arrow-wrapper:hover {
+    background-color: rgba(10, 10, 10, 0.3);
+}
+

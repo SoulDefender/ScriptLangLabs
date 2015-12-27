@@ -1,0 +1,51 @@
+{% extends 'template.html.twig' %}
+
+{% set user = sessionScope.user %}
+
+{% block content %}
+
+    <div class="card card-container">
+        <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"/>
+
+        <p id="profile-name" class="profile-name-card"></p>
+
+        <form role="form" method="post">
+            {% if requestScope.errors.email %}
+                <div class="form-group has-error">
+                    <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address"
+                           value="{{ requestScope.userCredentials.email }}" autocomplete='off' required/>
+                    <span class="help-block">{{ requestScope.errors.email }}</span>
+                </div>
+            {% else %}
+                <div class="form-group">
+                    <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address"
+                           value="{{ requestScope.userCredentials.email }}" required/>
+                </div>
+            {% endif %}
+            {% if requestScope.errors.password %}
+                <div class="form-group has-error">
+                    <input type="password" id="inputPassword" name="password" class="form-control"
+                           placeholder="Password" autocomplete='off'
+                           required/>
+                    <span class="help-block">{{ requestScope.errors.password }}</span>
+                </div>
+            {% else %}
+                <div class="form-group">
+                    <input type="password" id="inputPassword" name="password" class="form-control"
+                           placeholder="Password"
+                           required/>
+                </div>
+            {% endif %}
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4 form-group">
+                    <input class="btn btn-lg btn-primary" value="Sign In" type="submit">
+                </div>
+            </div>
+        </form>
+        <!-- /form -->
+        <a href="/password/recovery" class="forgot-password">
+            Forgot the password?
+        </a>
+    </div><!-- /card-container -->
+
+{% endblock %}
