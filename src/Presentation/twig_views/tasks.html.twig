@@ -1,0 +1,20 @@
+{% extends 'template.html.twig' %}
+
+{% block content %}
+    <div class="container">
+        <div class="col-md-6 col-md-offset-2">
+            <div class="jumbotron  tasks">
+                <div class="col-md-9 col-md-offset-3">
+                    <h3>Tasks</h3>
+                </div>
+                <div>
+                    <ul>
+                        {% for task in requestScope.tasks %}
+                            <li><a href="/task?id={{ task.id }}">{{ task.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

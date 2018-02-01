@@ -1,0 +1,65 @@
+{% extends 'template.html.twig' %}
+
+{% block content %}
+
+    {% set firstDate = 'on' %}
+    <div class="container">
+        <div class="col-md-2 arrow-wrapper" style="margin-top: 15%">
+            {% if requestScope.month - 1 < 1 %}
+                <a href="/taskBoard?year={{requestScope.year - 1}}&month=12" ><span class="slick-prev"></span></a>
+            {% else %}
+                <a href="/taskBoard?year={{requestScope.year}}&month={{ requestScope.month-1 }}" ><span class="slick-prev"></span></a>
+            {% endif %}
+
+        </div>
+        <div class="col-md-8">
+            <table class="calendar col-md-12">
+                <caption>{{ requestScope.monthName }}</caption>
+                <col class="weekend">
+                <col class="weekday" span="5">
+                <col class="weekend">
+                <thead>
+                <tr>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                    <th>Sun</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    {% for day in 0..requestScope.daysInMonth %}
+                    {% if firstDate == 'on' and loop.index < requestScope.dayOfWeek %}
+                        <td>
+                            <div class="day"></div>
+                        </td>
+                    {% else %}
+                        <td>
+                            <div class="day"><a
+                                        href="/tasks?year={{ requestScope.year }}&month={{ requestScope.month }}&day={{ day }}">
+                                    {{ day }}</a></div>
+                        </td>
+                        {% set firstDate = 'off' %}
+                    {% endif %}
+                    {% if loop.index % 7 == 0 %}
+                </tr>
+                {% if not loop.last %}
+                <tr>
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-2 arrow-wrapper" style="margin-top: 15%">
+        {% if requestScope.month + 1 > 12 %}
+            <a style="float: right" href="/taskBoard?year={{requestScope.year + 1}}&month=1"><span class="slick-next"></span></a>
+        {% else %}
+            <a style="float: right"  href="/taskBoard?year={{requestScope.year}}&month={{ requestScope.month+1 }}" ><span class="slick-next"></span></a>
+        {% endif %}
+        </div>
+    </div>
+{% endblock %}

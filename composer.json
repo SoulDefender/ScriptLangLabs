@@ -7,5 +7,16 @@
             "email": "aryox666@mail.ru"
         }
     ],
-    "require": {}
+    "require": {
+        "twig/twig": "~1.0",
+        "phpmailer/phpmailer": "^5.2",
+        "yohang/calendr": "^1.0"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "Reminder\\": "src/",
+            "Core\\": "core/"
+        }
+    }
 }

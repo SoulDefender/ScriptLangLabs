@@ -1,0 +1,31 @@
+{% extends 'template.html.twig' %}
+
+{% block content %}
+    <div class="container">
+        <div class="col-md-6 col-md-offset-2">
+            <div class="jumbotron  tasks">
+                <div class="col-md-9 col-md-offset-3">
+                    <h3>Task</h3>
+                </div>
+                <div>
+                    <h3>Task name: {{ requestScope.task.name }}</h3>
+                </div>
+                <div>
+                    <h3>Description: </h3>
+                    <p>{{ requestScope.task.description }}</p>
+                </div>
+                <div>
+                    <h3>Due date: {{ requestScope.task.endTime|date("Y-m-d")  }}</h3>
+                </div>
+                <form role="form" action="/task" method="post">
+                    <input class="hidden" name="resolve" value="true" id="resolve_task"/>
+                    <input class="hidden" name="id" value="{{ requestScope.task.id }}" id="task_id"/>
+                    <div>
+                        <input type="submit" class="btn btn-primary" value="Resolve"/>
+                        <a href="/taskBoard" class="btn btn-success">Back</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
